@@ -25,12 +25,17 @@ function afficherTousLesLivres(livres) {
 }
 
 function correspondLivre(recherche, livres) {
-    var result = livres[0]
-    for (var i = 1; i <= livres.length; i++) {
-        if (livres[i].nom === recherche) {
-           return result = true
+    return livres.includes(recherche);
+}
+
+function rechercherLivres(recherche, livres) {
+    var result = []
+    for(var i =0; i<= livres.length; i++) {
+        if (correspondLivre(recherche, livres[i]) === true) {
+            result.push(livres[i]);
         }
     }
+    return result
 }
 
 function supprimerLivre(titre, livres) {
@@ -94,10 +99,15 @@ function moyenneNote(films) {
 }
 
 function correspondFilm(recherche, film) {
-    var result = film[0]
-    for (var i = 1; i <= film.length; i++) {
-        if (film[i].titre === recherche) {
-           return result = true
+    return film.includes(recherche);
+}
+
+function rechercherFilms(recherche, films) {
+    var result = []
+    for(var i =0; i<= films.length; i++) {
+        if (correspondFilm(recherche, films[i]) === true) {
+            result.push(films[i]);
         }
     }
+    return result
 }
