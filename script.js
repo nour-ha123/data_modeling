@@ -24,6 +24,23 @@ function afficherTousLesLivres(livres) {
     console.log (affichage);
 }
 
+function correspondLivre(recherche, livres) {
+    var result = livres[0]
+    for (var i = 1; i <= livres.length; i++) {
+        if (livres[i].nom === recherche) {
+           return result = true
+        }
+    }
+}
+
+function supprimerLivre(titre, livres) {
+    for (var i = 0; i < livres.length; i++) {
+        if (livres[i].nom === titre) {
+            return  livres.splice(i, 1);
+        }
+    }
+  }
+
 // excercices films
 function creerFilm(titre, realisateur, duree, dateSortie, acteurs, studios, resume, note) {
     return {
@@ -58,4 +75,20 @@ function afficherTousLesFilms(films) {
     affichage = affichage + i + ": " + afficherFilm(afficherTousLesFilms[i]) + "\n";
     }
     console.log (affichage);
+}
+
+function moyenneDuree(films) {
+    var result = 0;
+    for (var i = 0; i < films.length; i++) {
+        result = result + films[i].duree;
+    }
+    return result / films.length;
+}
+
+function moyenneNote(films) {
+    var result = 0;
+    for (var i = 0; i < films.length; i++) {
+        result = result + films[i].note;
+    }
+    return result / films.length;
 }
