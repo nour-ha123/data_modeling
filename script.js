@@ -92,3 +92,12 @@ function moyenneNote(films) {
     }
     return result / films.length;
 }
+
+function correspondFilm(recherche, film) {
+    var result = film[0]
+    for (var i = 1; i <= film.length; i++) {
+        if (film[i].titre === recherche) {
+           return result = true
+        }
+    }
+}
